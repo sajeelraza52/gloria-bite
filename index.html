@@ -290,7 +290,7 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(1.85rem,4vw,2.6rem
       </div>
 
       <figure class="hero-photo">
-        <img id="heroImg" src="images/photo-1.jpg" alt="Gloria Bite">
+        <img id="heroImg" src="photo-1.jpg" alt="Gloria Bite">
         <figcaption class="hero-photo-cap">
           <h2 id="heroCapTitle">Fresh from our kitchen</h2>
           <span id="heroCapTag">Photos from the counter</span>
@@ -516,11 +516,11 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(1.85rem,4vw,2.6rem
         <div class="admin-panel" data-panel="photos">
           <div class="admin-card">
             <div class="admin-card-head"><div><h3>Hero Image</h3><p class="hint">Website khulte hi "Gloria Bite" naam ke neeche dikhti hai.</p></div></div>
-            <div class="field"><label for="inHeroImg">Hero image path</label><input type="text" id="inHeroImg" data-key="brand.heroImage" placeholder="images/photo-1.jpg"></div>
+            <div class="field"><label for="inHeroImg">Hero image path</label><input type="text" id="inHeroImg" data-key="brand.heroImage" placeholder="photo-1.jpg"></div>
           </div>
           <div class="admin-card">
             <div class="admin-card-head"><div><h3>Gallery Photos</h3><p class="hint">Photos section ke liye. Ek line par ek path.</p></div></div>
-            <div class="field"><label for="inPhotos">Photo paths</label><textarea id="inPhotos" data-key="gallery" style="min-height:150px" placeholder="images/photo-2.jpg&#10;images/photo-3.jpg"></textarea></div>
+            <div class="field"><label for="inPhotos">Photo paths</label><textarea id="inPhotos" data-key="gallery" style="min-height:150px" placeholder="photo-2.jpg&#10;photo-3.jpg"></textarea></div>
             <div class="admin-photo-grid" id="photoPreview"></div>
           </div>
         </div>
@@ -583,7 +583,7 @@ const SITE_DOC = doc(db, "site", "data");
 const DEFAULT_DATA = {
   brand: {
     name: "Gloria Bite",
-    heroImage: "images/photo-1.jpg",
+    heroImage: "photo-1.jpg",
     heroCapTitle: "Fresh from our kitchen",
     heroCapTag: "Photos from the counter",
     badgeText: "Sial Service Area · Southbound",
@@ -661,7 +661,7 @@ const DEFAULT_DATA = {
       items: ["2 large pizzas", "2 zinger burgers", "10 pcs nuggets", "10 hot wings",
               "2 large fries", "1.5 litre drink", "2 pound cakes"] }
   ],
-  gallery: ["images/photo-2.jpg","images/photo-3.jpg","images/photo-4.jpg","images/photo-5.jpg"]
+  gallery: ["photo-2.jpg","photo-3.jpg","photo-4.jpg","photo-5.jpg"]
 };
 
 const $ = (s, r = document) => r.querySelector(s);

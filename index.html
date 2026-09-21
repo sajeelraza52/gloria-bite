@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gloria Bite — Fast Food at Sial Service Area, M-2 Motorway</title>
+<meta name="description" content="Burgers, wings, pizza, shawarma and fries at Gloria Bite, Sial Motorway Service Area (southbound) on the Lahore–Islamabad M-2.">
+<meta name="theme-color" content="#8B1A1A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1A1410;--ink-2:#4A3F35;--ink-3:#8A7F72;
+  --cream:#FBF6EE;--paper:#FFFFFF;
+  --maroon:#8B1A1A;--maroon-dark:#6B0F0F;
+  --red:#C8202A;--orange:#E87722;--gold:#D4A017;--gold-soft:#F5D98B;
+  --line:#EEE5D7;--line-2:#E0D4BE;
+  --shadow-sm:0 1px 2px rgba(26,20,16,.04);
+  --shadow:0 14px 40px -18px rgba(26,20,16,.25);
+  --shadow-lg:0 30px 70px -30px rgba(139,26,26,.4);
+  --display:"Playfair Display",Georgia,serif;
+  --head:"Bricolage Grotesque","Arial Black",sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --radius:18px;
+}
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--body);color:var(--ink);background:var(--cream);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1180px,92%);margin-inline:auto}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;font-weight:600;font-size:.97rem;padding:.85rem 1.5rem;border-radius:11px;text-decoration:none;border:2px solid transparent;cursor:pointer;line-height:1;transition:all .18s ease}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--maroon);color:#fff}
+.btn-primary:hover{background:var(--maroon-dark);box-shadow:0 8px 24px -10px var(--maroon)}
+.btn-primary:disabled{opacity:.55;cursor:not-allowed}
+.btn-outline{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-outline:hover{background:var(--ink);color:#fff}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-gold:hover{background:#BF8E0E;color:#fff}
+.btn svg{width:17px;height:17px;flex:none}
+
+.topbar{background:var(--ink);color:#C9BFB3;font-size:.82rem;padding:.5rem 0;text-align:center;letter-spacing:.02em}
+.topbar b{color:var(--gold-soft);font-weight:600}
+.topbar a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
+@media(max-width:520px){.topbar{font-size:.75rem}}
+
+.site-header{position:sticky;top:0;z-index:50;background:rgba(251,246,238,.92);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:76px}
+.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;font-family:var(--display);font-weight:900;font-size:1.5rem;letter-spacing:-.02em;color:var(--ink);white-space:nowrap}
+.logo-mark{width:40px;height:40px;flex:none;border-radius:11px;background:linear-gradient(140deg,var(--maroon),var(--red));display:grid;place-items:center;color:#fff;font-family:var(--display);font-weight:900;font-size:1.15rem;box-shadow:0 6px 18px -8px var(--maroon)}
+.logo em{font-style:normal;color:var(--maroon)}
+.nav{display:flex;gap:1.7rem;font-size:.95rem;font-weight:600}
+.nav a{text-decoration:none;color:var(--ink-2);transition:color .15s}
+.nav a:hover{color:var(--maroon)}
+.header-cta .btn{padding:.62rem 1.15rem;font-size:.9rem}
+@media(max-width:820px){.nav{display:none}.header-cta{display:none}}
+
+.hero{padding:clamp(2.5rem,5vw,4rem) 0 0;position:relative}
+.hero-brand{text-align:center;max-width:760px;margin:0 auto clamp(2rem,4vw,3rem)}
+.hero-badge{display:inline-flex;align-items:center;gap:.55rem;background:var(--paper);border:1px solid var(--line-2);border-radius:999px;padding:.42rem 1rem .42rem .5rem;font-size:.8rem;font-weight:600;letter-spacing:.03em;color:var(--ink-2);margin-bottom:1.4rem;box-shadow:0 2px 8px -4px rgba(26,20,16,.12)}
+.hero-badge b{background:var(--maroon);color:#fff;border-radius:999px;padding:.18rem .6rem;font-size:.75rem;letter-spacing:.05em}
+.hero h1{font-family:var(--display);font-weight:900;font-size:clamp(2.8rem,8vw,5rem);line-height:.98;letter-spacing:-.03em;margin-bottom:1rem}
+.hero h1 em{font-style:normal;color:var(--maroon);position:relative}
+.hero h1 em::after{content:"";position:absolute;bottom:.08em;left:0;right:0;height:.12em;background:var(--gold);opacity:.55;border-radius:3px;z-index:-1}
+.hero-lead{font-size:clamp(1rem,1.4vw,1.15rem);color:var(--ink-2);max-width:52ch;margin:0 auto 1.8rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center}
+
+.hero-photo{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:16/9;background:linear-gradient(140deg,#2A1E14,#4A2E1C);box-shadow:var(--shadow-lg)}
+@media(max-width:640px){.hero-photo{aspect-ratio:4/3;border-radius:18px}}
+.hero-photo img{width:100%;height:100%;object-fit:cover;animation:heroZoom 20s ease-out infinite alternate}
+@keyframes heroZoom{from{transform:scale(1)}to{transform:scale(1.06)}}
+.hero-photo::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 40%,rgba(26,20,16,.55) 100%)}
+.hero-photo-cap{position:absolute;left:0;right:0;bottom:0;padding:1.5rem 1.8rem;color:#fff;display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.hero-photo-cap h2{font-family:var(--display);font-weight:800;font-size:clamp(1.1rem,2.2vw,1.5rem);letter-spacing:-.01em;text-shadow:0 2px 12px rgba(0,0,0,.4)}
+.hero-photo-cap span{font-size:.82rem;background:rgba(255,255,255,.16);backdrop-filter:blur(8px);padding:.4rem .9rem;border-radius:999px;border:1px solid rgba(255,255,255,.25);letter-spacing:.03em;font-weight:600}
+
+.highlights{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:clamp(2.5rem,5vw,4rem)}
+.highlights .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
+.hl{display:flex;align-items:center;gap:.9rem;padding:1.5rem 1.6rem;border-right:1px solid var(--line)}
+.hl:last-child{border-right:0}
+.hl:first-child{padding-left:0}
+.hl-icon{width:42px;height:42px;flex:none;border-radius:12px;background:linear-gradient(150deg,var(--maroon),var(--orange));color:#fff;display:grid;place-items:center}
+.hl-icon svg{width:20px;height:20px}
+.hl b{display:block;font-family:var(--head);font-size:1.05rem;line-height:1.25;font-weight:800}
+.hl span{font-size:.85rem;color:var(--ink-3)}
+@media(max-width:820px){.highlights .wrap{grid-template-columns:1fr}.hl{border-right:0;border-bottom:1px solid var(--line);padding:1.15rem 0}.hl:last-child{border-bottom:0}}
+
+section{padding:clamp(3rem,7vw,5rem) 0}
+.sec-head{margin-bottom:2.4rem;max-width:62ch}
+.eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--maroon);margin-bottom:.8rem}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--gold);border-radius:2px}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(1.85rem,4vw,2.6rem);line-height:1.1;letter-spacing:-.025em}
+.sec-head p{color:var(--ink-2);margin-top:.75rem;max-width:54ch}
+
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.2rem;align-items:start}
+.menu-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem 1.5rem 1.1rem;box-shadow:var(--shadow-sm);transition:box-shadow .2s,border-color .2s,transform .2s}
+.menu-card:hover{box-shadow:var(--shadow);border-color:var(--line-2);transform:translateY(-2px)}
+.menu-card-title{font-family:var(--display);font-size:1.28rem;font-weight:800;letter-spacing:-.015em;padding-bottom:.75rem;margin-bottom:.5rem;border-bottom:2px solid var(--gold);display:flex;align-items:center;gap:.6rem;color:var(--maroon)}
+.menu-card-title::before{content:"";width:10px;height:10px;border-radius:3px;background:var(--maroon);flex:none;transform:rotate(45deg)}
+.menu-list{list-style:none}
+.menu-list li{display:grid;grid-template-columns:1fr auto;gap:.2rem 1rem;align-items:start;padding:.7rem 0;border-bottom:1px dashed var(--line-2)}
+.menu-list li:last-child{border-bottom:0}
+.mi-name{font-weight:600;font-size:.98rem;line-height:1.35}
+.mi-desc{grid-column:1/-1;font-size:.83rem;color:var(--ink-3);line-height:1.5;margin-top:.2rem}
+.mi-price{font-weight:700;font-size:.98rem;color:var(--maroon);white-space:nowrap;padding-top:.05rem}
+.menu-note{margin-top:1.8rem;font-size:.88rem;color:var(--ink-3);display:flex;align-items:center;gap:.5rem}
+.menu-note svg{width:16px;height:16px;flex:none}
+
+.deals{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.deals-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:1.3rem}
+.deal{position:relative;border-radius:22px;padding:1.9rem 1.7rem 1.6rem;border:2px solid var(--line-2);background:var(--cream);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.deal:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.deal.featured{background:radial-gradient(circle at 100% 0%,rgba(232,119,34,.4),transparent 50%),linear-gradient(158deg,#2A1E14 0%,#4A2E1C 100%);border-color:transparent;color:#FBF3E8;box-shadow:0 30px 60px -26px rgba(139,26,26,.6)}
+.deal-tag{position:absolute;top:-12px;left:1.7rem;background:var(--gold);color:var(--ink);font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.32rem .8rem;border-radius:999px}
+.deal h3{font-family:var(--display);font-size:1.6rem;font-weight:800;letter-spacing:-.02em;margin-bottom:.2rem}
+.deal .deal-sub{font-size:.87rem;color:var(--ink-3);margin-bottom:1.2rem}
+.deal.featured .deal-sub{color:#C9B8A6}
+.deal ul{list-style:none;display:grid;gap:.55rem;margin-bottom:1.3rem}
+.deal ul li{display:flex;align-items:flex-start;gap:.6rem;font-size:.94rem;line-height:1.5}
+.deal ul li::before{content:"";width:17px;height:17px;flex:none;margin-top:3px;border-radius:50%;background:rgba(139,26,26,.12) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238B1A1A' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6 9 17l-5-5'/></svg>") center/11px no-repeat}
+.deal.featured ul li::before{background-color:rgba(212,160,23,.22);background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F5D98B' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6 9 17l-5-5'/></svg>")}
+.deal .deal-cta{margin-top:auto}
+
+.photos[hidden]{display:none}
+.photos-grid{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:130px;gap:12px}
+.photos-grid figure{position:relative;overflow:hidden;border-radius:16px;background:var(--line);margin:0;box-shadow:var(--shadow-sm)}
+.photos-grid figure:nth-child(1){grid-column:span 3;grid-row:span 2}
+.photos-grid figure:nth-child(2){grid-column:span 3;grid-row:span 2}
+.photos-grid figure:nth-child(3){grid-column:span 2;grid-row:span 2}
+.photos-grid figure:nth-child(4){grid-column:span 2;grid-row:span 2}
+.photos-grid figure:nth-child(5){grid-column:span 2;grid-row:span 2}
+.photos-grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.photos-grid figure:hover img{transform:scale(1.06)}
+@media(max-width:760px){.photos-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}.photos-grid figure:nth-child(n){grid-column:auto;grid-row:auto}.photos-grid figure:nth-child(1){grid-column:span 2}}
+
+.visit-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(1.5rem,4vw,3rem);align-items:start}
+@media(max-width:860px){.visit-grid{grid-template-columns:1fr}}
+.visit-address{font-family:var(--display);font-size:clamp(1.3rem,2.4vw,1.65rem);font-weight:800;line-height:1.32;letter-spacing:-.02em;margin:.4rem 0 1.4rem}
+.visit-actions{display:flex;flex-wrap:wrap;gap:.7rem}
+.route{display:flex;align-items:center;gap:.75rem;margin:1.7rem 0;font-size:.88rem;color:var(--ink-3);font-weight:600}
+.route i{flex:1;height:0;border-top:2px dashed var(--line-2);min-width:16px}
+.hours-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem 1.6rem;box-shadow:var(--shadow)}
+.hours-card h3{font-family:var(--display);font-size:1.2rem;font-weight:800;letter-spacing:-.015em;margin-bottom:1rem;display:flex;align-items:center;gap:.6rem}
+.hours-card h3 svg{width:19px;height:19px;color:var(--maroon)}
+.hours-list{list-style:none}
+.hours-list li{display:flex;justify-content:space-between;gap:1rem;padding:.65rem 0;border-bottom:1px dashed var(--line-2);font-size:.95rem}
+.hours-list li:last-child{border-bottom:0;padding-bottom:0}
+.hours-list .hd{color:var(--ink-2)}
+.hours-list .ht{font-weight:600;color:var(--maroon)}
+.map-frame{margin-top:2.5rem;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:var(--paper);box-shadow:var(--shadow)}
+.map-frame iframe{width:100%;height:360px;border:0;display:block}
+
+.site-footer{background:var(--ink);color:#B8AEA4;padding:3rem 0 2rem;font-size:.9rem}
+.site-footer .wrap{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.site-footer b{color:#fff;font-family:var(--display);font-size:1.35rem;font-weight:900;letter-spacing:-.015em;display:block;margin-bottom:.5rem}
+.site-footer a{color:#E8DFD4;text-decoration:none}
+.site-footer a:hover{color:var(--gold-soft);text-decoration:underline;text-underline-offset:4px}
+.site-footer .fcol{line-height:1.8;max-width:32ch}
+.site-footer .copy{width:100%;border-top:1px solid rgba(255,255,255,.1);padding-top:1.3rem;margin-top:.8rem;font-size:.82rem;color:#8A7F72;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.admin-link{opacity:.5;font-size:.78rem}
+.admin-link:hover{opacity:1}
+
+.mobile-bar{position:fixed;left:0;right:0;bottom:0;z-index:45;display:none;gap:.6rem;padding:.7rem .9rem;padding-bottom:calc(.7rem + env(safe-area-inset-bottom));background:rgba(251,246,238,.97);backdrop-filter:blur(14px);border-top:1px solid var(--line)}
+.mobile-bar .btn{flex:1;padding:.85rem 1rem;font-size:.95rem}
+@media(max-width:820px){.mobile-bar{display:flex}body{padding-bottom:78px}}
+
+.admin-overlay{position:fixed;inset:0;z-index:100;background:var(--cream);overflow-y:auto;display:none}
+.admin-overlay.open{display:block}
+.admin-login{min-height:100vh;display:grid;place-items:center;padding:2rem;background:linear-gradient(140deg,#1A1410,#3A2418)}
+.login-card{background:var(--paper);border-radius:22px;padding:2.5rem 2rem;width:min(440px,100%);box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+.login-card h2{font-family:var(--display);font-size:1.7rem;text-align:center;margin-bottom:.3rem;letter-spacing:-.02em}
+.login-card p{text-align:center;color:var(--ink-3);font-size:.9rem;margin-bottom:1.8rem}
+.login-card label{display:block;font-size:.85rem;font-weight:600;margin-bottom:.5rem;color:var(--ink-2)}
+.login-card input{width:100%;padding:.85rem 1rem;border:2px solid var(--line-2);border-radius:11px;font-size:1rem;font-family:inherit;background:var(--cream);transition:border-color .15s;margin-bottom:1rem}
+.login-card input:focus{outline:none;border-color:var(--maroon)}
+.login-card .btn{width:100%;padding:1rem}
+.login-err{color:var(--red);font-size:.85rem;margin-bottom:.8rem;text-align:center;display:none;padding:.6rem;background:rgba(200,32,42,.08);border-radius:9px}
+.login-err.show{display:block}
+
+.admin-shell{min-height:100vh;display:flex;flex-direction:column}
+.admin-top{position:sticky;top:0;z-index:10;background:var(--ink);color:#fff;padding:.9rem 0;box-shadow:0 4px 20px -8px rgba(0,0,0,.4)}
+.admin-top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.admin-brand{display:flex;align-items:center;gap:.7rem;font-family:var(--display);font-weight:800;font-size:1.15rem;letter-spacing:-.015em}
+.admin-brand small{background:var(--gold);color:var(--ink);font-size:.65rem;padding:.2rem .55rem;border-radius:6px;font-family:var(--body);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-style:normal}
+.admin-top-actions{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
+.admin-user{color:#C9BFB3;font-size:.8rem;margin-right:.4rem}
+.admin-user b{color:var(--gold-soft)}
+.admin-top .btn{padding:.6rem 1.1rem;font-size:.85rem;border-radius:9px}
+
+.admin-tabs{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:60px;z-index:9}
+.admin-tabs .wrap{display:flex;gap:.4rem;overflow-x:auto;padding:.5rem 0}
+.admin-tab{padding:.7rem 1.15rem;border-radius:9px;font-weight:600;font-size:.9rem;background:transparent;border:0;color:var(--ink-2);white-space:nowrap;transition:all .15s}
+.admin-tab:hover{background:var(--cream);color:var(--ink)}
+.admin-tab.active{background:var(--maroon);color:#fff}
+
+.admin-body{flex:1;padding:2rem 0 6rem}
+.admin-panel{display:none;animation:fadeIn .25s ease}
+.admin-panel.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+.admin-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;box-shadow:var(--shadow-sm)}
+.admin-card-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.2rem;padding-bottom:1rem;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.admin-card h3{font-family:var(--display);font-size:1.25rem;font-weight:800;letter-spacing:-.015em;color:var(--maroon)}
+.admin-card .hint{font-size:.83rem;color:var(--ink-3);margin-top:.35rem;line-height:1.5}
+.admin-card code{background:var(--cream);padding:.15rem .4rem;border-radius:5px;font-size:.85em;color:var(--maroon)}
+
+.field{margin-bottom:1rem}
+.field label{display:block;font-size:.85rem;font-weight:600;margin-bottom:.45rem;color:var(--ink-2)}
+.field input[type="text"],.field input[type="tel"],.field input[type="password"],.field input[type="email"],.field textarea,.field select{width:100%;padding:.75rem .95rem;border:2px solid var(--line-2);border-radius:10px;font-family:inherit;font-size:.95rem;background:var(--cream);transition:border-color .15s;color:var(--ink)}
+.field textarea{min-height:120px;resize:vertical;font-family:ui-monospace,Menlo,monospace;font-size:.85rem;line-height:1.6}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--maroon);background:#fff}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:640px){.field-row{grid-template-columns:1fr}}
+
+.admin-save{position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(26,20,16,.97);backdrop-filter:blur(10px);padding:.9rem 0;box-shadow:0 -8px 30px -10px rgba(0,0,0,.4)}
+.admin-save .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.admin-save-info{color:#C9BFB3;font-size:.85rem}
+.admin-save-info b{color:var(--gold-soft)}
+.admin-save .btn{padding:.75rem 1.4rem;font-size:.9rem}
+
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:.85rem 1.5rem;border-radius:11px;font-size:.9rem;font-weight:600;box-shadow:var(--shadow-lg);opacity:0;pointer-events:none;transition:all .3s ease;z-index:200;max-width:90vw;text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.error{background:var(--red)}
+.toast.success{background:#1E6B3E}
+
+.admin-photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.8rem;margin-top:.8rem}
+.admin-photo{position:relative;aspect-ratio:1;border-radius:11px;overflow:hidden;background:var(--line);border:2px solid var(--line-2)}
+.admin-photo img{width:100%;height:100%;object-fit:cover}
+
+.loading-pill{position:fixed;top:80px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:.55rem 1.2rem;border-radius:999px;font-size:.85rem;font-weight:600;z-index:60;box-shadow:var(--shadow);display:none;align-items:center;gap:.5rem}
+.loading-pill.show{display:inline-flex}
+.loading-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:pulse 1.2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.4;transform:scale(.8)}50%{opacity:1;transform:scale(1)}}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body id="top">
+
+<div class="loading-pill" id="loadingPill"><span class="loading-dot"></span><span id="loadingText">Loading…</span></div>
+
+<div class="topbar">
+  <b>Sial Service Area</b> · Southbound on the M-2 · <a href="#visit">See directions</a>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="#top">
+      <span class="logo-mark" id="logoMark">G</span>
+      <span id="logoText">Gloria <em>Bite</em></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#menu">Menu</a>
+      <a href="#deals">Deals</a>
+      <a href="#photos">Photos</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-primary js-call" href="#">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.4 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        Call to order
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-brand">
+        <span class="hero-badge"><b id="heroBadge">M-2</b> <span id="heroBadgeText">Sial Service Area · Southbound</span></span>
+        <h1 id="heroTitle">Gloria <em>Bite</em></h1>
+        <p class="hero-lead" id="heroLead">Loading…</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary js-call" href="#">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.4 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+            Call to order
+          </a>
+          <a class="btn btn-outline js-dir" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Get directions
+          </a>
+        </div>
+      </div>
+
+      <figure class="hero-photo">
+        <img id="heroImg" src="images/photo-1.jpg" alt="Gloria Bite">
+        <figcaption class="hero-photo-cap">
+          <h2 id="heroCapTitle">Fresh from our kitchen</h2>
+          <span id="heroCapTag">Photos from the counter</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="highlights">
+    <div class="wrap">
+      <div class="hl">
+        <div class="hl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div><b>Open daily</b><span>Motorway service area</span></div>
+      </div>
+      <div class="hl">
+        <div class="hl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2.5 3 5 5.5 5 9a5 5 0 0 1-10 0c0-3.5 2.5-6 5-9Z"/></svg></div>
+        <div><b>Fresh &amp; hot</b><span>Cooked to order</span></div>
+      </div>
+      <div class="hl">
+        <div class="hl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1.2 12H7.2L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></div>
+        <div><b>Takeaway ready</b><span>Grab it and go</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="menu">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Our Menu</span>
+        <h2>Hot food, ready when you pull in</h2>
+        <p id="menuIntro"></p>
+      </div>
+      <div class="menu-grid" id="menuGrid"></div>
+      <p class="menu-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <span id="menuNote"></span>
+      </p>
+    </div>
+  </section>
+
+  <section id="deals" class="deals">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Deals &amp; Combos</span>
+        <h2>Feed the whole car</h2>
+        <p id="dealsIntro"></p>
+      </div>
+      <div class="deals-grid" id="dealsGrid"></div>
+    </div>
+  </section>
+
+  <section id="photos" class="photos" hidden>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Photos</span>
+        <h2>A look at the food and the place</h2>
+      </div>
+      <div class="photos-grid" id="photosGrid"></div>
+    </div>
+  </section>
+
+  <section id="visit">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Find Us</span>
+        <h2>Right on the M-2</h2>
+      </div>
+      <div class="visit-grid">
+        <div>
+          <p class="visit-address" id="visitAddress"></p>
+          <div class="route">
+            <span id="routeFrom">Islamabad</span><i></i>
+            <span id="routeStop">Gloria Bite</span><i></i>
+            <span id="routeTo">Lahore</span>
+          </div>
+          <div class="visit-actions">
+            <a class="btn btn-primary js-dir" href="#" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Open in Google Maps
+            </a>
+            <a class="btn btn-outline js-call" href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.4 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+              Call us
+            </a>
+          </div>
+        </div>
+        <div class="hours-card">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Opening hours</h3>
+          <ul class="hours-list" id="hoursList"></ul>
+        </div>
+      </div>
+      <div class="map-frame" id="mapFrame">
+        <iframe id="mapIframe" loading="lazy" title="Gloria Bite location" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="fcol">
+      <b id="footBrand">Gloria Bite</b>
+      <span id="footAddr">Sial Service Area (Southbound)<br>Lahore–Islamabad Motorway (M-2)</span>
+    </div>
+    <div class="fcol" id="footContact"></div>
+    <div class="copy">
+      <span>© <span id="year"></span> Gloria Bite. All rights reserved.</span>
+      <a href="#admin" class="admin-link" id="adminLink">Admin Panel</a>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <a class="btn btn-outline js-call" href="#">Call</a>
+  <a class="btn btn-primary js-dir" href="#" target="_blank" rel="noopener">Directions</a>
+</div>
+
+<div class="admin-overlay" id="adminOverlay">
+  <div class="admin-login" id="adminLogin">
+    <div class="login-card">
+      <div class="logo-mark" style="margin:0 auto 1.2rem;width:56px;height:56px;font-size:1.5rem;border-radius:15px;display:grid;place-items:center;background:linear-gradient(140deg,#8B1A1A,#C8202A);color:#fff;font-family:Playfair Display,serif;font-weight:900">G</div>
+      <h2>Admin Panel</h2>
+      <p>Gloria Bite — Management</p>
+      <form id="loginForm">
+        <label for="emailInput">Email</label>
+        <input type="email" id="emailInput" autocomplete="username" placeholder="admin@gloriabite.pk" required>
+        <label for="pwdInput">Password</label>
+        <input type="password" id="pwdInput" autocomplete="current-password" placeholder="Your password" required>
+        <div class="login-err" id="loginErr"></div>
+        <button type="submit" class="btn btn-primary" id="loginBtn">Unlock Admin Panel</button>
+      </form>
+      <p style="margin-top:1.5rem;font-size:.8rem;color:#8A7F72;text-align:center">
+        <a href="#" id="backToSite" style="color:#8B1A1A;text-decoration:none;font-weight:600">← Back to website</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="admin-shell" id="adminShell" hidden>
+    <div class="admin-top">
+      <div class="wrap">
+        <div class="admin-brand">
+          <span class="logo-mark" style="width:34px;height:34px;font-size:1rem;border-radius:9px">G</span>
+          Gloria Bite <small>Admin</small>
+        </div>
+        <div class="admin-top-actions">
+          <span class="admin-user">Signed in: <b id="adminEmail">—</b></span>
+          <button class="btn btn-outline" id="viewSiteBtn" style="color:#fff;border-color:rgba(255,255,255,.3)">View site</button>
+          <button class="btn btn-outline" id="logoutBtn" style="color:#fff;border-color:rgba(255,255,255,.3)">Logout</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="admin-tabs">
+      <div class="wrap">
+        <button class="admin-tab active" data-tab="general">General</button>
+        <button class="admin-tab" data-tab="menu">Menu</button>
+        <button class="admin-tab" data-tab="deals">Deals</button>
+        <button class="admin-tab" data-tab="photos">Photos</button>
+        <button class="admin-tab" data-tab="backup">Backup</button>
+      </div>
+    </div>
+
+    <div class="admin-body">
+      <div class="wrap">
+        <div class="admin-panel active" data-panel="general">
+          <div class="admin-card">
+            <div class="admin-card-head"><div><h3>Contact &amp; Location</h3><p class="hint">Phone number aur Google Maps link.</p></div></div>
+            <div class="field-row">
+              <div class="field"><label for="inPhone">Phone (international, no spaces)</label><input type="tel" id="inPhone" data-key="contact.phone" placeholder="+923001234567"></div>
+              <div class="field"><label for="inPhoneDisplay">Phone (display)</label><input type="text" id="inPhoneDisplay" data-key="contact.phoneDisplay" placeholder="0300 1234567"></div>
+            </div>
+            <div class="field"><label for="inMaps">Google Maps link</label><input type="text" id="inMaps" data-key="contact.mapsLink"></div>
+            <div class="field"><label for="inMapEmbed">Map embed URL</label><input type="text" id="inMapEmbed" data-key="contact.mapEmbed"></div>
+          </div>
+
+          <div class="admin-card">
+            <div class="admin-card-head"><div><h3>Address</h3><p class="hint">Har line alag likhein.</p></div></div>
+            <div class="field"><textarea id="inAddress" data-key="location.address"></textarea></div>
+            <div class="field-row">
+              <div class="field"><label for="inRouteFrom">Route start</label><input type="text" id="inRouteFrom" data-key="location.routeFrom"></div>
+              <div class="field"><label for="inRouteTo">Route end</label><input type="text" id="inRouteTo" data-key="location.routeTo"></div>
+            </div>
+          </div>
+
+          <div class="admin-card">
+            <div class="admin-card-head"><div><h3>Opening Hours</h3><p class="hint">Format: <code>Din | Time</code>. Khaali chhoren to "Open daily" show hoga.</p></div></div>
+            <div class="field"><textarea id="inHours" data-key="hours" placeholder="Monday – Sunday | 11:00 am – 12:00 am"></textarea></div>
+          </div>
+
+          <div class="admin-card">
+            <div class="admin-card-head"><div><h3>Text Content</h3></div></div>
+            <div class="field-row">
+              <div class="field"><label for="inBadge">Top badge text</label><input type="text" id="inBadge" data-key="brand.badgeText"></div>
+              <div class="field"><label for="inCapTitle">Hero caption title</label><input type="text" id="inCapTitle" data-key="brand.heroCapTitle"></div>
+            </div>
+            <div class="field"><label for="inLead">Hero tagline</label><textarea id="inLead" data-key="brand.lead" style="min-height:70px"></textarea></div>
+            <div class="field"><label for="inMenuIntro">Menu intro</label><textarea id="inMenuIntro" data-key="menuIntro" style="min-height:70px"></textarea></div>
+            <div class="field"><label for="inMenuNote">Menu note</label><input type="text" id="inMenuNote" data-key="menuNote"></div>
+            <div class="field"><label for="inDealsIntro">Deals intro</label><textarea id="inDealsIntro" data-key="dealsIntro" style="min-height:70px"></textarea></div>
+          </div>
+        </div>
+
+        <div class="admin-panel" data-panel="menu">
+          <div class="admin-card">
+            <div class="admin-card-head"><div>
+              <h3>Menu Editor</h3>
+              <p class="hint">Har line ek item: <code>Name | Description | Price</code><br><strong>Blank line se nayi category</strong> shuru hoti hai — pehli line category ka naam.</p>
+            </div></div>
+            <div class="field"><textarea id="inMenu" data-key="menu" style="min-height:520px"></textarea></div>
+          </div>
+        </div>
+
+        <div class="admin-panel" data-panel="deals">
+          <div class="admin-card">
+            <div class="admin-card-head"><div>
+              <h3>Deals &amp; Combos</h3>
+              <p class="hint">Har line ek deal: <code>Name | Subtitle | Item1, Item2</code><br>Featured banane ke liye naam ke aakhir mein <code>*</code> lagayen.</p>
+            </div></div>
+            <div class="field"><textarea id="inDeals" data-key="deals" style="min-height:280px"></textarea></div>
+          </div>
+        </div>
+
+        <div class="admin-panel" data-panel="photos">
+          <div class="admin-card">
+            <div class="admin-card-head"><div><h3>Hero Image</h3><p class="hint">Website khulte hi "Gloria Bite" naam ke neeche dikhti hai.</p></div></div>
+            <div class="field"><label for="inHeroImg">Hero image path</label><input type="text" id="inHeroImg" data-key="brand.heroImage" placeholder="images/photo-1.jpg"></div>
+          </div>
+          <div class="admin-card">
+            <div class="admin-card-head"><div><h3>Gallery Photos</h3><p class="hint">Photos section ke liye. Ek line par ek path.</p></div></div>
+            <div class="field"><label for="inPhotos">Photo paths</label><textarea id="inPhotos" data-key="gallery" style="min-height:150px" placeholder="images/photo-2.jpg&#10;images/photo-3.jpg"></textarea></div>
+            <div class="admin-photo-grid" id="photoPreview"></div>
+          </div>
+        </div>
+
+        <div class="admin-panel" data-panel="backup">
+          <div class="admin-card">
+            <div class="admin-card-head"><div>
+              <h3>Backup &amp; Restore</h3>
+              <p class="hint">JSON export/import. Firebase ke saath optional hai, magar backup rakhna achha hai.</p>
+            </div></div>
+            <div style="display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:1.2rem">
+              <button class="btn btn-primary" id="copyJsonBtn">Copy JSON</button>
+              <button class="btn btn-outline" id="downloadJsonBtn">Download JSON</button>
+            </div>
+            <div class="field"><label for="inJson">Paste JSON to import</label><textarea id="inJson" style="min-height:250px"></textarea></div>
+            <button class="btn btn-gold" id="applyJsonBtn">Apply / Import</button>
+          </div>
+          <div class="admin-card">
+            <div class="admin-card-head"><div><h3>Sync Status</h3><p class="hint">Firebase se connection ki halat.</p></div></div>
+            <p id="syncStatus" style="font-size:.9rem;color:var(--ink-2)">Checking…</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="admin-save">
+      <div class="wrap">
+        <div class="admin-save-info">Changes Firebase par save honge — <b>foran sab customers ko dikhenge</b></div>
+        <button class="btn btn-primary" id="saveBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>
+          Save to Firebase
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+import { getFirestore, doc, onSnapshot, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAKfOMMMt1_VrsRy5efL56-PIyeA54PHNc",
+  authDomain: "gloria-bite.firebaseapp.com",
+  projectId: "gloria-bite",
+  storageBucket: "gloria-bite.firebasestorage.app",
+  messagingSenderId: "493476756773",
+  appId: "1:493476756773:web:e4b9bfacb78d16cc816ecc",
+  measurementId: "G-VKX2C47QWT"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth(app);
+const SITE_DOC = doc(db, "site", "data");
+
+const DEFAULT_DATA = {
+  brand: {
+    name: "Gloria Bite",
+    heroImage: "images/photo-1.jpg",
+    heroCapTitle: "Fresh from our kitchen",
+    heroCapTag: "Photos from the counter",
+    badgeText: "Sial Service Area · Southbound",
+    lead: "Burgers, wings, pizza and shawarma — hot, fresh and ready to grab on your way between Lahore and Islamabad."
+  },
+  contact: {
+    phone: "", phoneDisplay: "",
+    mapsLink: "https://maps.app.goo.gl/7y121iK7QwAnRvv49",
+    mapEmbed: "https://www.google.com/maps?q=Sial%20Service%20Area%20M-2%20Motorway%20Pakistan&output=embed"
+  },
+  location: {
+    address: "Sial Motorway Service Area,\nSouth Bound (towards Lahore),\nLahore–Islamabad Motorway",
+    routeFrom: "Islamabad", routeTo: "Lahore"
+  },
+  hours: [],
+  menuIntro: "From crispy zinger burgers to wood-fired style pizzas and loaded fries — everything is made fresh at the counter.",
+  menuNote: "Prices are in Pakistani rupees and may change. Call to confirm today's rates.",
+  dealsIntro: "Family deals and party combos for long drives and celebrations.",
+  menu: [
+    { title: "Burgers", items: [
+      ["Angry Burger", "Spicy crispy fried chicken, secret sauce and fresh vegetables", ""],
+      ["Chicken Burger", "Mixed ground chicken patty with quality spices in a hot bun", ""],
+      ["Mighty Burger", "Signature zinger with twin fillets, spicy sauce, lettuce and cheese", ""],
+      ["Tower Burger", "Crispy zinger fillet and a juicy patty with sauce and cheese", ""]
+    ]},
+    { title: "Crispy Wings", items: [
+      ["Any Chicken Piece", "", "Rs 220"],
+      ["5 Pcs Hot Wings", "", "Rs 320"],
+      ["10 Pcs Hot Wings", "", "Rs 600"],
+      ["10 Pcs Oven Baked", "", "Rs 600"],
+      ["5 Pcs Nuggets", "", "Rs 300"],
+      ["10 Pcs Nuggets", "", "Rs 580"]
+    ]},
+    { title: "Gloria Fries", items: [
+      ["Fries", "", "Rs 250"],
+      ["Mayo Fries", "", "Rs 300"],
+      ["Loaded Fries", "", "Rs 400"]
+    ]},
+    { title: "Shawarma Roll", items: [
+      ["Shawarma", "", "Rs 190"],
+      ["Cheese Shawarma", "", "Rs 280"],
+      ["Zinger Shawarma", "", "Rs 300"]
+    ]},
+    { title: "Paratha Roll", items: [
+      ["Tikka Paratha Roll", "", "Rs 320"],
+      ["Zinger Paratha Roll", "", "Rs 300"]
+    ]},
+    { title: "Pizzas", items: [
+      ["Chicken Tikka", "", "Rs 650"],
+      ["Chicken Fajita", "", "Rs 650"],
+      ["Chicken Mexican", "", "Rs 650"],
+      ["B.B.Q Pizza", "", "Rs 650"],
+      ["Malai Pizza", "", "Rs 650"],
+      ["Crown Crust Pizza", "", "Rs 700"]
+    ]},
+    { title: "Soft Drinks", items: [
+      ["NR", "", "Rs 90"],
+      ["Can", "", "Rs 150"],
+      ["500 ml", "", "Rs 140"],
+      ["1 Litre", "", "Rs 180"],
+      ["1.5 Litre", "", "Rs 220"],
+      ["Mineral Water (Small)", "", "Rs 60"],
+      ["Mineral Water (Large)", "", "Rs 140"]
+    ]},
+    { title: "Hot Drinks", items: [["Tea", "", ""], ["Coffee", "", ""]] },
+    { title: "Ice Cream", items: [
+      ["Vanilla", "", ""], ["Chocolate", "", ""], ["Mango", "", ""],
+      ["Kulfa", "", ""], ["Pista Badami", "", ""]
+    ]}
+  ],
+  deals: [
+    { name: "Deal 8", sub: "Perfect for two on the road", featured: false,
+      items: ["10 pcs hot wings", "1 regular fries", "2 regular drinks"] },
+    { name: "Birthday Deal", sub: "Everything you need for the party", featured: true,
+      items: ["2 large pizzas", "2 zinger burgers", "10 pcs nuggets", "10 hot wings",
+              "2 large fries", "1.5 litre drink", "2 pound cakes"] }
+  ],
+  gallery: ["images/photo-2.jpg","images/photo-3.jpg","images/photo-4.jpg","images/photo-5.jpg"]
+};
+
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const has = v => v !== undefined && v !== null && String(v).trim() !== "";
+const escapeHtml = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+function toast(msg, type = "") {
+  const t = $("#toast");
+  t.textContent = msg;
+  t.className = "toast show " + type;
+  setTimeout(() => { t.className = "toast " + type; }, 2800);
+}
+function showLoading(text) { $("#loadingText").textContent = text; $("#loadingPill").classList.add("show"); }
+function hideLoading() { $("#loadingPill").classList.remove("show"); }
+
+function deepMerge(target, source) {
+  if (!source || typeof source !== "object") return target;
+  Object.keys(source).forEach(k => {
+    if (Array.isArray(source[k])) target[k] = source[k];
+    else if (source[k] && typeof source[k] === "object") target[k] = deepMerge(target[k] || {}, source[k]);
+    else target[k] = source[k];
+  });
+  return target;
+}
+
+let CURRENT_DATA = null;
+let ADMIN_UNLOCKED = false;
+let HAS_SAVED_ONCE = false;
+
+function renderSite(data) {
+  if (!data) return;
+  try {
+    const parts = (data.brand.name || "Gloria Bite").split(" ");
+    $("#logoMark").textContent = (data.brand.name || "G").trim().charAt(0).toUpperCase();
+    if (parts.length > 1) {
+      const html = escapeHtml(parts[0]) + " <em>" + escapeHtml(parts.slice(1).join(" ")) + "</em>";
+      $("#logoText").innerHTML = html;
+      $("#heroTitle").innerHTML = html;
+    } else {
+      $("#logoText").textContent = data.brand.name;
+      $("#heroTitle").textContent = data.brand.name;
+    }
+    $("#footBrand").textContent = data.brand.name;
+    $("#heroBadgeText").textContent = data.brand.badgeText || "";
+    $("#heroLead").textContent = data.brand.lead || "";
+    $("#heroCapTitle").textContent = data.brand.heroCapTitle || "";
+    $("#heroCapTag").textContent = data.brand.heroCapTag || "";
+
+    const hi = $("#heroImg");
+    if (has(data.brand.heroImage)) { hi.src = data.brand.heroImage; hi.style.display = ""; }
+    else hi.style.display = "none";
+
+    const callLinks = $$(".js-call");
+    if (has(data.contact.phone)) {
+      callLinks.forEach(el => {
+        el.href = "tel:" + data.contact.phone.replace(/\s+/g, "");
+        if (data.contact.phoneDisplay) el.setAttribute("aria-label", "Call " + data.brand.name + " at " + data.contact.phoneDisplay);
+        el.style.display = "";
+      });
+    } else callLinks.forEach(el => el.style.display = "none");
+
+    $$(".js-dir").forEach(el => { el.href = data.contact.mapsLink; });
+
+    const addr = $("#visitAddress");
+    addr.innerHTML = "";
+    String(data.location.address || "").split("\n").forEach((line, i, arr) => {
+      addr.appendChild(document.createTextNode(line));
+      if (i < arr.length - 1) addr.appendChild(document.createElement("br"));
+    });
+    $("#routeFrom").textContent = data.location.routeFrom || "";
+    $("#routeTo").textContent = data.location.routeTo || "";
+
+    const hl = $("#hoursList"); hl.innerHTML = "";
+    const hours = (data.hours && data.hours.length) ? data.hours : [["Open daily", "Motorway service area"]];
+    hours.forEach(([day, time]) => {
+      const li = document.createElement("li");
+      const d = document.createElement("span"); d.className = "hd"; d.textContent = day;
+      const t = document.createElement("span"); t.className = "ht"; t.textContent = time;
+      li.append(d, t); hl.appendChild(li);
+    });
+
+    const grid = $("#menuGrid"); grid.innerHTML = "";
+    (data.menu || []).forEach(cat => {
+      const card = document.createElement("article"); card.className = "menu-card";
+      const h = document.createElement("h3"); h.className = "menu-card-title"; h.textContent = cat.title;
+      card.appendChild(h);
+      const ul = document.createElement("ul"); ul.className = "menu-list";
+      cat.items.forEach(([name, desc, price]) => {
+        const li = document.createElement("li");
+        const nm = document.createElement("span"); nm.className = "mi-name"; nm.textContent = name;
+        li.appendChild(nm);
+        if (has(price)) { const pr = document.createElement("span"); pr.className = "mi-price"; pr.textContent = price; li.appendChild(pr); }
+        if (has(desc)) { const d = document.createElement("span"); d.className = "mi-desc"; d.textContent = desc; li.appendChild(d); }
+        ul.appendChild(li);
+      });
+      card.appendChild(ul); grid.appendChild(card);
+    });
+
+    $("#menuIntro").textContent = data.menuIntro || "";
+    $("#menuNote").textContent = data.menuNote || "";
+    $("#dealsIntro").textContent = data.dealsIntro || "";
+
+    const dg = $("#dealsGrid"); dg.innerHTML = "";
+    (data.deals || []).forEach(deal => {
+      const el = document.createElement("article");
+      el.className = "deal" + (deal.featured ? " featured" : "");
+      if (deal.featured) { const tag = document.createElement("span"); tag.className = "deal-tag"; tag.textContent = "Most popular"; el.appendChild(tag); }
+      const h = document.createElement("h3"); h.textContent = deal.name; el.appendChild(h);
+      if (has(deal.sub)) { const s = document.createElement("p"); s.className = "deal-sub"; s.textContent = deal.sub; el.appendChild(s); }
+      const ul = document.createElement("ul");
+      (deal.items || []).forEach(item => { const li = document.createElement("li"); li.textContent = item; ul.appendChild(li); });
+      el.appendChild(ul);
+      const cta = document.createElement("div"); cta.className = "deal-cta";
+      const btn = document.createElement("a"); btn.href = "#visit";
+      btn.className = deal.featured ? "btn btn-primary" : "btn btn-outline";
+      btn.textContent = "Ask about this deal";
+      cta.appendChild(btn); el.appendChild(cta);
+      dg.appendChild(el);
+    });
+
+    const gallery = (data.gallery || []).filter(has);
+    const photosSection = $("#photos");
+    const photosGrid = $("#photosGrid");
+    photosGrid.innerHTML = "";
+    if (gallery.length) {
+      photosSection.hidden = false;
+      gallery.forEach((src, i) => {
+        const fig = document.createElement("figure");
+        const img = new Image();
+        img.alt = data.brand.name + " — photo " + (i + 1);
+        img.loading = "lazy"; img.decoding = "async";
+        img.onerror = () => fig.remove();
+        img.src = src; fig.appendChild(img); photosGrid.appendChild(fig);
+      });
+    } else photosSection.hidden = true;
+
+    if (has(data.contact.mapEmbed)) { $("#mapIframe").src = data.contact.mapEmbed; $("#mapFrame").style.display = ""; }
+    else $("#mapFrame").style.display = "none";
+
+    const fc = $("#footContact"); fc.innerHTML = "";
+    if (has(data.contact.phoneDisplay)) {
+      const a = document.createElement("a");
+      a.href = "tel:" + data.contact.phone.replace(/\s+/g, "");
+      a.textContent = data.contact.phoneDisplay;
+      fc.append("Call: ", a, document.createElement("br"));
+    }
+    const mapA = document.createElement("a");
+    mapA.href = data.contact.mapsLink; mapA.target = "_blank"; mapA.rel = "noopener";
+    mapA.textContent = "Open in Google Maps →";
+    fc.appendChild(mapA);
+
+    $("#year").textContent = new Date().getFullYear();
+    document.title = data.brand.name + " — Fast Food at Sial Service Area, M-2 Motorway";
+  } catch (e) { console.error("Render error:", e); }
+}
+
+function menuToText(menu) {
+  return menu.map(cat => {
+    const lines = cat.items.map(([n, d, p]) => [n, d || "", p || ""].join(" | "));
+    return [cat.title, ...lines].join("\n");
+  }).join("\n\n");
+}
+function textToMenu(text) {
+  return text.split(/\n\s*\n/).map(block => {
+    const lines = block.split("\n").map(l => l.trim()).filter(l => l !== "");
+    if (!lines.length) return null;
+    const title = lines.shift();
+    const items = lines.map(line => {
+      const parts = line.split("|").map(p => p.trim());
+      return [parts[0] || "", parts[1] || "", parts[2] || ""];
+    });
+    return { title, items };
+  }).filter(Boolean);
+}
+function dealsToText(deals) {
+  return deals.map(d => [d.name + (d.featured ? " *" : ""), d.sub || "", (d.items || []).join(", ")].join(" | ")).join("\n");
+}
+function textToDeals(text) {
+  return text.split("\n").map(l => l.trim()).filter(l => l !== "").map(line => {
+    const parts = line.split("|").map(p => p.trim());
+    let name = parts[0] || "";
+    const featured = /\*\s*$/.test(name);
+    name = name.replace(/\s*\*\s*$/, "");
+    return { name, sub: parts[1] || "", featured,
+      items: (parts[2] || "").split(",").map(x => x.trim()).filter(Boolean) };
+  });
+}
+function hoursToText(hours) { return (hours || []).map(([d, t]) => d + " | " + t).join("\n"); }
+function textToHours(text) {
+  return text.split("\n").map(l => l.trim()).filter(l => l !== "").map(line => {
+    const i = line.indexOf("|");
+    if (i < 0) return [line, ""];
+    return [line.slice(0, i).trim(), line.slice(i + 1).trim()];
+  });
+}
+const photosToText = arr => (arr || []).join("\n");
+const textToPhotos = text => text.split("\n").map(l => l.trim()).filter(Boolean);
+
+function fillForm(data) {
+  const map = {
+    "contact.phone": data.contact.phone,
+    "contact.phoneDisplay": data.contact.phoneDisplay,
+    "contact.mapsLink": data.contact.mapsLink,
+    "contact.mapEmbed": data.contact.mapEmbed,
+    "location.address": data.location.address,
+    "location.routeFrom": data.location.routeFrom,
+    "location.routeTo": data.location.routeTo,
+    "brand.badgeText": data.brand.badgeText,
+    "brand.heroCapTitle": data.brand.heroCapTitle,
+    "brand.lead": data.brand.lead,
+    "brand.heroImage": data.brand.heroImage,
+    "menuIntro": data.menuIntro, "menuNote": data.menuNote, "dealsIntro": data.dealsIntro,
+    "hours": hoursToText(data.hours),
+    "menu": menuToText(data.menu),
+    "deals": dealsToText(data.deals),
+    "gallery": photosToText(data.gallery)
+  };
+  $$("[data-key]").forEach(el => {
+    const k = el.getAttribute("data-key");
+    if (map[k] !== undefined) el.value = map[k];
+  });
+  renderPhotoPreview(data.gallery);
+}
+
+function readForm() {
+  const d = JSON.parse(JSON.stringify(CURRENT_DATA || DEFAULT_DATA));
+  const get = k => { const el = $("[data-key='" + k + "']"); return el ? el.value : undefined; };
+  d.contact.phone = get("contact.phone");
+  d.contact.phoneDisplay = get("contact.phoneDisplay");
+  d.contact.mapsLink = get("contact.mapsLink");
+  d.contact.mapEmbed = get("contact.mapEmbed");
+  d.location.address = get("location.address");
+  d.location.routeFrom = get("location.routeFrom");
+  d.location.routeTo = get("location.routeTo");
+  d.brand.badgeText = get("brand.badgeText");
+  d.brand.heroCapTitle = get("brand.heroCapTitle");
+  d.brand.lead = get("brand.lead");
+  d.brand.heroImage = get("brand.heroImage");
+  d.menuIntro = get("menuIntro"); d.menuNote = get("menuNote"); d.dealsIntro = get("dealsIntro");
+  d.hours = textToHours(get("hours"));
+  d.menu = textToMenu(get("menu"));
+  d.deals = textToDeals(get("deals"));
+  d.gallery = textToPhotos(get("gallery"));
+  return d;
+}
+
+function renderPhotoPreview(gallery) {
+  const grid = $("#photoPreview"); grid.innerHTML = "";
+  (gallery || []).forEach((src, i) => {
+    if (!has(src)) return;
+    const div = document.createElement("div"); div.className = "admin-photo";
+    const img = new Image(); img.src = src; img.alt = "Photo " + (i + 1);
+    img.onerror = () => div.style.opacity = ".3";
+    div.appendChild(img); grid.appendChild(div);
+  });
+}
+
+let unsubscribe = null;
+function startFirestoreListener() {
+  showLoading("Connecting to Firebase…");
+  unsubscribe = onSnapshot(SITE_DOC,
+    (snap) => {
+      hideLoading();
+      if (snap.exists()) {
+        HAS_SAVED_ONCE = true;
+        const merged = deepMerge(JSON.parse(JSON.stringify(DEFAULT_DATA)), snap.data());
+        CURRENT_DATA = merged;
+        renderSite(merged);
+        if (ADMIN_UNLOCKED) {
+          if (!document.activeElement || !$("#adminShell").contains(document.activeElement)) {
+            fillForm(merged);
+          }
+        }
+        $("#syncStatus").innerHTML = '<span style="color:#1E6B3E;font-weight:600">● Connected to Firebase</span><br><small style="color:#8A7F72">Last update: ' + new Date().toLocaleString() + '</small>';
+      } else {
+        CURRENT_DATA = JSON.parse(JSON.stringify(DEFAULT_DATA));
+        renderSite(CURRENT_DATA);
+        $("#syncStatus").innerHTML = '<span style="color:#E87722;font-weight:600">● No data in Firebase yet</span><br><small style="color:#8A7F72">Admin panel kholo aur "Save to Firebase" dabao.</small>';
+        if (ADMIN_UNLOCKED && !HAS_SAVED_ONCE) fillForm(CURRENT_DATA);
+      }
+    },
+    (err) => {
+      hideLoading();
+      console.error("Firestore error:", err);
+      CURRENT_DATA = CURRENT_DATA || JSON.parse(JSON.stringify(DEFAULT_DATA));
+      renderSite(CURRENT_DATA);
+      toast("Firebase se connect nahi ho saka — offline mode", "error");
+      $("#syncStatus").innerHTML = '<span style="color:#C8202A;font-weight:600">● Not connected</span><br><small>' + (err.message || "") + '</small>';
+    }
+  );
+}
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    ADMIN_UNLOCKED = true;
+    $("#adminEmail").textContent = user.email || "admin";
+    $("#adminLogin").hidden = true;
+    $("#adminShell").hidden = false;
+    $("#loginErr").classList.remove("show");
+    if (CURRENT_DATA) fillForm(CURRENT_DATA);
+  } else {
+    ADMIN_UNLOCKED = false;
+    $("#adminLogin").hidden = false;
+    $("#adminShell").hidden = true;
+  }
+});
+
+$("#loginForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const email = $("#emailInput").value.trim();
+  const pwd = $("#pwdInput").value;
+  const btn = $("#loginBtn");
+  const err = $("#loginErr");
+  err.classList.remove("show");
+  if (!email || !pwd) { err.textContent = "Email aur password dono bharein."; err.classList.add("show"); return; }
+  btn.disabled = true; btn.textContent = "Signing in…";
+  try {
+    await signInWithEmailAndPassword(auth, email, pwd);
+    $("#pwdInput").value = "";
+  } catch (ex) {
+    console.error(ex);
+    let msg = "Login fail ho gaya.";
+    if (ex.code === "auth/invalid-credential" || ex.code === "auth/wrong-password" || ex.code === "auth/user-not-found")
+      msg = "Email ya password galat hai.";
+    else if (ex.code === "auth/too-many-requests")
+      msg = "Bohat zyada koshishein — thori der baad try karein.";
+    else if (ex.code === "auth/invalid-email")
+      msg = "Email address valid nahi hai.";
+    else msg = ex.message || msg;
+    err.textContent = msg; err.classList.add("show");
+  } finally {
+    btn.disabled = false; btn.textContent = "Unlock Admin Panel";
+  }
+});
+
+$("#logoutBtn").addEventListener("click", async () => {
+  await signOut(auth);
+  location.hash = "";
+  toast("Logout ho gaya");
+});
+
+$("#backToSite").addEventListener("click", (e) => { e.preventDefault(); location.hash = ""; });
+$("#viewSiteBtn").addEventListener("click", () => { location.hash = ""; });
+
+$$(".admin-tab").forEach(tab => {
+  tab.addEventListener("click", () => {
+    const target = tab.getAttribute("data-tab");
+    $$(".admin-tab").forEach(t => t.classList.toggle("active", t === tab));
+    $$(".admin-panel").forEach(p => p.classList.toggle("active", p.getAttribute("data-panel") === target));
+  });
+});
+
+$("#saveBtn").addEventListener("click", async () => {
+  if (!ADMIN_UNLOCKED) { toast("Pehle login karein", "error"); return; }
+  const data = readForm();
+  const btn = $("#saveBtn");
+  btn.disabled = true; btn.textContent = "Saving…";
+  try {
+    await setDoc(SITE_DOC, { ...data, _updatedAt: serverTimestamp() });
+    HAS_SAVED_ONCE = true;
+    CURRENT_DATA = data;
+    renderSite(data);
+    renderPhotoPreview(data.gallery);
+    toast("Firebase par save ho gaya ✓", "success");
+    $("#syncStatus").innerHTML = '<span style="color:#1E6B3E;font-weight:600">● Saved to Firebase</span><br><small style="color:#8A7F72">' + new Date().toLocaleString() + '</small>';
+  } catch (ex) {
+    console.error(ex);
+    toast("Save fail: " + (ex.message || "unknown error"), "error");
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg> Save to Firebase';
+  }
+});
+
+$("#copyJsonBtn").addEventListener("click", async () => {
+  const json = JSON.stringify(CURRENT_DATA || DEFAULT_DATA, null, 2);
+  try { await navigator.clipboard.writeText(json); toast("JSON copy ho gaya ✓", "success"); }
+  catch (e) { $("#inJson").value = json; toast("Copy nahi hua — JSON neeche box mein hai", "error"); }
+});
+
+$("#downloadJsonBtn").addEventListener("click", () => {
+  const json = JSON.stringify(CURRENT_DATA || DEFAULT_DATA, null, 2);
+  const blob = new Blob([json], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = "gloria-bite-data.json";
+  a.click(); URL.revokeObjectURL(url);
+  toast("Download ho gayi ✓", "success");
+});
+
+$("#applyJsonBtn").addEventListener("click", async () => {
+  const raw = $("#inJson").value.trim();
+  if (!raw) { toast("Pehle JSON paste karein", "error"); return; }
+  if (!ADMIN_UNLOCKED) { toast("Pehle login karein", "error"); return; }
+  try {
+    const parsed = JSON.parse(raw);
+    const merged = deepMerge(JSON.parse(JSON.stringify(DEFAULT_DATA)), parsed);
+    CURRENT_DATA = merged;
+    fillForm(merged);
+    renderSite(merged);
+    await setDoc(SITE_DOC, { ...merged, _updatedAt: serverTimestamp() });
+    toast("Import + save ho gaya ✓", "success");
+  } catch (e) { console.error(e); toast("JSON valid nahi hai", "error"); }
+});
+
+function handleHash() {
+  const isAdmin = location.hash === "#admin";
+  const overlay = $("#adminOverlay");
+  if (isAdmin) {
+    overlay.classList.add("open");
+    document.body.style.overflow = "hidden";
+    if (!ADMIN_UNLOCKED) { $("#adminLogin").hidden = false; $("#adminShell").hidden = true; }
+  } else {
+    overlay.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+}
+window.addEventListener("hashchange", handleHash);
+
+(function init() {
+  CURRENT_DATA = JSON.parse(JSON.stringify(DEFAULT_DATA));
+  renderSite(CURRENT_DATA);
+  handleHash();
+  startFirestoreListener();
+})();
+</script>
+</body>
+</html>

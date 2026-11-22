@@ -296,6 +296,52 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(1.9rem,4.2vw,2.7re
 .loading-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:pulse 1.2s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:.4;transform:scale(.8)}50%{opacity:1;transform:scale(1)}}
 
+/* ---------- Sajeel Mods animation upgrade (added 2026-11-22) ---------- */
+@keyframes gbFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes gbMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes gbGlow{0%,100%{box-shadow:0 32px 64px -28px rgba(139,26,26,.65)}50%{box-shadow:0 32px 84px -18px rgba(232,119,34,.8)}}
+@keyframes gbWiggle{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+@keyframes gbCardIn{from{opacity:0;transform:translateY(22px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes gbUnderline{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+/* Hero badge floats gently after its entrance */
+.hero-badge{animation:fadeUp .6s ease both,gbFloat 3.4s ease-in-out 1s infinite}
+/* Gold underline under "Bite" sweeps in */
+.hero h1 em::after{transform:scaleX(0);transform-origin:left center;animation:gbUnderline .9s .6s ease forwards}
+/* Floating chip on the hero photo */
+.hero-chip{position:absolute;top:1rem;right:1rem;z-index:2;background:rgba(255,255,255,.94);color:var(--maroon);font-weight:700;font-size:.82rem;padding:.5rem 1rem;border-radius:999px;box-shadow:0 10px 24px -8px rgba(0,0,0,.45);animation:gbFloat 3s ease-in-out infinite}
+/* Scrolling food marquee strip */
+.gb-marquee{overflow:hidden;background:var(--maroon);color:#FBF3E8;font-family:var(--head);font-weight:800;font-size:.95rem;letter-spacing:.14em;padding:.7rem 0;white-space:nowrap}
+.gb-marquee-track{display:inline-block;animation:gbMarquee 22s linear infinite}
+.gb-marquee-track span{padding:0 1.1rem}
+.gb-marquee-track b{color:var(--gold-soft)}
+/* Menu cards animate in as they are rendered */
+.menu-card{animation:gbCardIn .55s ease backwards}
+.menu-card:nth-child(3n+2){animation-delay:.07s}
+.menu-card:nth-child(3n+3){animation-delay:.14s}
+.menu-list li{transition:background .15s,padding-left .2s}
+.menu-list li:hover{background:rgba(212,160,23,.07);padding-left:.35rem}
+.menu-list li:hover .mi-price{color:var(--orange)}
+.mi-price{transition:color .2s}
+.menu-card-title::before{transition:transform .35s ease}
+.menu-card:hover .menu-card-title::before{transform:rotate(225deg)}
+/* Deals animate in; featured deal glows; tag wiggles */
+.deal{animation:gbCardIn .55s ease backwards}
+.deal:nth-child(2){animation-delay:.1s}
+.deal.featured{animation:gbCardIn .55s ease backwards,gbGlow 3s ease-in-out 1.6s infinite}
+.deal-tag{animation:gbWiggle 2.6s ease-in-out infinite}
+/* Gallery photos animate in with a stagger */
+.photos-grid figure{animation:gbCardIn .55s ease backwards}
+.photos-grid figure:nth-child(2){animation-delay:.08s}
+.photos-grid figure:nth-child(3){animation-delay:.16s}
+.photos-grid figure:nth-child(4){animation-delay:.24s}
+.photos-grid figure:nth-child(5){animation-delay:.32s}
+/* Highlight icons bob on hover */
+.hl-icon{transition:transform .3s ease}
+.hl:hover .hl-icon{transform:translateY(-4px) rotate(-4deg)}
+/* Scroll reveal for static sections (JS adds .gb-reveal / .gb-in) */
+.gb-reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.gb-in{opacity:1;transform:none}
+
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
 </style>
 </head>
@@ -357,9 +403,12 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(1.9rem,4.2vw,2.7re
           <h2 id="heroCapTitle">Fresh from our kitchen</h2>
           <span id="heroCapTag">Photos from the counter</span>
         </figcaption>
+        <span class="hero-chip">🔥 Fresh &amp; Hot — Cooked to order</span>
       </figure>
     </div>
   </section>
+
+  <div class="gb-marquee"><div class="gb-marquee-track"><span>BURGERS <b>✦</b> CRISPY WINGS <b>✦</b> PIZZA <b>✦</b> SHAWARMA <b>✦</b> LOADED FRIES <b>✦</b> NUGGETS <b>✦</b> ICE CREAM <b>✦</b> FRESH &amp; HOT <b>✦</b> </span><span aria-hidden="true">BURGERS <b>✦</b> CRISPY WINGS <b>✦</b> PIZZA <b>✦</b> SHAWARMA <b>✦</b> LOADED FRIES <b>✦</b> NUGGETS <b>✦</b> ICE CREAM <b>✦</b> FRESH &amp; HOT <b>✦</b> </span></div></div>
 
   <div class="highlights">
     <div class="wrap">
@@ -1266,6 +1315,29 @@ window.addEventListener("scroll", () => {
   renderSite(CURRENT_DATA);
   handleHash();
   startFirestoreListener();
+})();
+</script>
+
+<script>
+/* Sajeel Mods animation upgrade — scroll reveal for static sections.
+   Separate from the Firebase module script above; it never touches
+   menu data, Firebase, or the admin panel. Decorative only. */
+(function () {
+  try {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var targets = document.querySelectorAll('.sec-head, .highlights .hl, .menu-note, .site-footer .fcol, .site-footer .copy');
+    targets.forEach(function (el) { el.classList.add('gb-reveal'); });
+    if (reduce || !('IntersectionObserver' in window)) {
+      targets.forEach(function (el) { el.classList.add('gb-in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('gb-in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    targets.forEach(function (el) { io.observe(el); });
+  } catch (e) { /* reveal is decorative — never break the page */ }
 })();
 </script>
 </body>
